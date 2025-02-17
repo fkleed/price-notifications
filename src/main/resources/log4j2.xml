@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="https://logging.apache.org/xml/ns"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="
+                   https://logging.apache.org/xml/ns
+                   https://logging.apache.org/xml/ns/log4j-config-2.xsd">
+    <Appenders>
+        <Console name="CONSOLE">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <AsyncRoot level="INFO">
+            <AppenderRef ref="CONSOLE"/>
+        </AsyncRoot>
+        <SystemPropertyArbiter propertyName="spring.profiles.active" propertyValue="local">
+            <AsyncLogger name="com.example.price_notifications" additivity="false" level="DEBUG">
+                <AppenderRef ref="CONSOLE"/>
+            </AsyncLogger>
+        </SystemPropertyArbiter>
+    </Loggers>
+</Configuration>

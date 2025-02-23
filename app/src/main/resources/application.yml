@@ -1,0 +1,12 @@
+server:
+  port: 9000
+
+spring:
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: price-notifications
+
+client:
+  posts:
+    url: https://jsonplaceholder.typicode.com/

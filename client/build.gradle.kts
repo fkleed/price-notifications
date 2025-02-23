@@ -4,6 +4,7 @@ plugins {
 }
 
 dependencies {
+    compileOnly(libs.spring.boot.starter.webflux)
     compileOnly(libs.jackson.module.kotlin)
 }
 
@@ -26,10 +27,19 @@ openApiGenerate {
         )
     )
     outputDir.set(layout.buildDirectory.dir("generated").get().asFile.path)
+    packageName.set("${BuildConstants.BASE_PACKAGE_NAME}.client")
+    generateApiTests.set(false)
+    generateModelTests.set(false)
 }
 
-tasks.register("printTest") {
-    doLast {
-        println("test")
+sourceSets {
+    main {
+        kotlin {
+            srcDir(layout.buildDirectory.dir("generated/src/main/kotlin").get())
+        }
     }
+}
+
+tasks.compileKotlin{
+    dependsOn("openApiGenerate")
 }

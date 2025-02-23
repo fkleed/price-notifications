@@ -4,3 +4,7 @@ server:
 spring:
   application:
     name: price-notifications
+
+client:
+  posts:
+    url: https://jsonplaceholder.typicode.com/

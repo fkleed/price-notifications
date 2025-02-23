@@ -13,6 +13,8 @@ dependencies {
 //    implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation(libs.bundles.spring.boot)
     implementation(libs.disruptor)
+    implementation(libs.jackson.module.kotlin)
+    implementation(project(":client"))
 
 
 //    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PriceNotificationsApplicationKt" type="JetRunConfigurationType" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="com.example.price_notifications.app.PriceNotificationsApplicationKt" />
+    <module name="price-notifications.app.main" />
+    <shortenClasspath name="NONE" />
+    <option name="VM_PARAMETERS" value="-Dspring.profiles.active=local" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

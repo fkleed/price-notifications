@@ -1,4 +1,4 @@
-package com.example.price_notifications
+package com.example.price_notifications.app
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

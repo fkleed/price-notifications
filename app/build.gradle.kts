@@ -1,21 +1,7 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.9.25"
-    id("org.jetbrains.kotlin.plugin.spring") version "1.9.25"
-    id("org.springframework.boot") version "3.4.2"
-    id("io.spring.dependency-management") version "1.1.7"
-}
-
-group = "com.example"
-version = "0.0.1-SNAPSHOT"
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
-    }
-}
-
-repositories {
-    mavenCentral()
+    id(BuildConstants.KOTLIN_CONVENTIONS_PLUGIN)
+    alias(libs.plugins.kotlin.plugin.spring)
+    alias(libs.plugins.springframework.boot)
 }
 
 dependencies {
@@ -42,8 +28,4 @@ dependencies {
 //    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-kotlin {
-    compilerOptions {
-        freeCompilerArgs.add("-Xjsr305=strict")
-    }
-}
+version = "1.0"

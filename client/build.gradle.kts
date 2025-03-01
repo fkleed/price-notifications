@@ -13,7 +13,7 @@ version = "1.0"
 val apiSpecDir = layout.projectDirectory.dir("src/main/resources/api")
 
 openApiGenerate {
-    inputSpec.set(apiSpecDir.file("posts.yml").asFile.path)
+    inputSpec.set(apiSpecDir.file("alpha_vantage.yml").asFile.path)
     generatorName.set("kotlin")
     library.set("jvm-spring-webclient")
     configOptions.set(

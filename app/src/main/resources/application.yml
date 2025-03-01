@@ -8,5 +8,6 @@ spring:
     name: price-notifications
 
 client:
-  posts:
-    url: https://jsonplaceholder.typicode.com/
+  alpha-vantage:
+    url: https://www.alphavantage.co
+    key:

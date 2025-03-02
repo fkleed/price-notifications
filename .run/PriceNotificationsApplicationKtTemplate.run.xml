@@ -1,6 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="PriceNotificationsApplicationKt" type="JetRunConfigurationType" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="com.example.price_notifications.app.PriceNotificationsApplicationKt" />
+  <configuration default="false" name="PriceNotificationsApplicationKtTemplate" type="JetRunConfigurationType">
+    <envs>
+      <env name="ALPHA_VANTAGE_API_KEY" value="abc" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.example.price.notifications.app.PriceNotificationsApplicationKt" />
     <module name="price-notifications.app.main" />
     <shortenClasspath name="NONE" />
     <option name="VM_PARAMETERS" value="-Dspring.profiles.active=local" />

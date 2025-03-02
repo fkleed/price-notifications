@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: Alpha Vantage
+  version: 1.0.0
+servers:
+  - url: https://www.alphavantage.co
+paths:
+  '/query':
+    get:
+      tags: ['AlphaVantage']
+      operationId: getCurrencyExchangeRate
+      parameters:
+        - in: query
+          name: function
+          required: true
+          schema:
+            type: string
+            enum: [CURRENCY_EXCHANGE_RATE]
+        - $ref: '#/components/parameters/fromCurrency'
+        - $ref: '#/components/parameters/toCurrency'
+        - in: query
+          name: apikey
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrencyExchangeRateResponse'
+      security:
+        - apiKeyAuth: []
+components:
+  parameters:
+    fromCurrency:
+      name: from_currency
+      in: query
+      required: true
+      schema:
+        $ref: '#/components/schemas/Currency'
+    toCurrency:
+      name: to_currency
+      in: query
+      required: true
+      schema:
+        $ref: '#/components/schemas/Currency'
+  schemas:
+    Currency:
+      type: string
+      enum:
+        - EUR
+        - BTC
+        - ETH
+        - XRP
+    CurrencyExchangeRateResponse:
+      type: object
+      properties:
+        'Realtime Currency Exchange Rate':
+          type: object
+          properties:
+            '1. From_Currency Code':
+              $ref: '#/components/schemas/Currency'
+            '2. From_Currency Name':
+              type: string
+            '3. To_Currency Code':
+              $ref: '#/components/schemas/Currency'
+            '4. To_Currency Name':
+              type: string
+            '5. Exchange Rate':
+              type: number
+            '6. Last Refreshed':
+              type: string
+              pattern: '^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$'
+            '7. Time Zone':
+              type: string
+            '8. Bid Price':
+              type: number
+            '9. Ask Price':
+              type: number

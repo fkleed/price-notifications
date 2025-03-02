@@ -14,7 +14,7 @@
             <AppenderRef ref="CONSOLE"/>
         </AsyncRoot>
         <SystemPropertyArbiter propertyName="spring.profiles.active" propertyValue="local">
-            <AsyncLogger name="com.example.price_notifications" additivity="false" level="DEBUG">
+            <AsyncLogger name="com.example.price.notifications" additivity="false" level="DEBUG">
                 <AppenderRef ref="CONSOLE"/>
             </AsyncLogger>
         </SystemPropertyArbiter>

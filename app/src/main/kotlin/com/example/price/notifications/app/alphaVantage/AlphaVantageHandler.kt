@@ -18,9 +18,13 @@ class AlphaVantageHandler(private val alphaVantageApi: AlphaVantageApi, private 
         logger.debug("Request to get currency exchange")
         return alphaVantageApi.getCurrencyExchangeRate(
             AlphaVantageApi.FunctionGetCurrencyExchangeRate.CURRENCY_EXCHANGE_RATE,
-            Currency.XRP,
+            Currency.BTC,
             Currency.EUR,
             alphaVantageProperties.key
-        ).flatMap { ServerResponse.ok().bodyValue(it) }
+        ).flatMap {
+            ServerResponse.ok().bodyValue(it)
+        }.doOnError{
+            logger.error("Error occurred: ${it.message}")
+        }
     }
 }

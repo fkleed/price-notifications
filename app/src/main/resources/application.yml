@@ -10,4 +10,4 @@ spring:
 client:
   alpha-vantage:
     url: https://www.alphavantage.co
-    key:
+    key: ${ALPHA_VANTAGE_API_KEY}

@@ -1,3 +1,5 @@
+version = "1.0"
+
 plugins {
     id(BuildConstants.KOTLIN_CONVENTIONS_PLUGIN)
     alias(libs.plugins.kotlin.plugin.spring)
@@ -29,5 +31,3 @@ dependencies {
 //    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 //    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
-
-version = "1.0"

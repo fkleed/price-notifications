@@ -1,0 +1,21 @@
+name: price-notifications
+
+services:
+  pn_db:
+    image: postgres:17.4-alpine3.21
+    restart: on-failure
+    shm_size: 128mb
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_USER_NAME=${DB_USER_NAME}
+      - DB_USER_PASSWORD=${DB_USER_PASSWORD}
+    volumes:
+      - pn_db_data:/var/lib/postgresql/data
+      - ./init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+    ports:
+      - '6543:5432'
+volumes:
+  pn_db_data:
+
+

@@ -45,10 +45,10 @@ dependencyResolutionManagement {
             bundle("spring-boot", listOf("spring-boot-starter-webflux", "spring-boot-starter-log4j2"))
 
             // dependencies for liquibase plugin
-            version("liquibase-core", "4.31.1")
+            version("liquibase-core", "4.32.0")
             version("liquibase-groovy-dsl", "4.0.1")
             version("picocli", "4.7.7")
-            version("postgresql", "42.1.4")
+            version("postgresql", "42.7.5")
 
             library("liquibase-core", "org.liquibase", "liquibase-core").versionRef("liquibase-core")
             library("liquibase-groovy-dsl", "org.liquibase", "liquibase-groovy-dsl").versionRef("liquibase-groovy-dsl")

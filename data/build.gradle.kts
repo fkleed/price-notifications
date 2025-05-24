@@ -31,6 +31,8 @@ liquibase {
             "logLevel" to "info",
             "changeLogFile" to resourceDir.file("changelog.groovy").asFile.path,
             "url" to dbUrl,
+            "reference-url" to dbUrl,
+            "driver" to "org.postgresql.Driver",
             "username" to pgUser,
             "password" to pgPassword
         )

@@ -22,19 +22,16 @@ dockerRun {
     network = "pn-db-network"
 }
 
-val resourceDir = layout.projectDirectory.dir("src/main/resources")
-
 liquibase {
-    val dbUrl = "jdbc:postgresql://localhost:$pgPort/$pgDb"
+    val dbUrl = "jdbc:postgresql://localhost:$pgPort/$pgDb?currentSchema=public&user=$pgUser&password=$pgPassword"
+    val mainChangelog = "src/main/resources/changelog/main.groovy"
     activities.register("main") {
         this.arguments = mapOf(
             "logLevel" to "info",
-            "changeLogFile" to resourceDir.file("changelog.groovy").asFile.path,
+            "changeLogFile" to mainChangelog,
             "url" to dbUrl,
             "reference-url" to dbUrl,
             "driver" to "org.postgresql.Driver",
-            "username" to pgUser,
-            "password" to pgPassword
         )
     }
     runList = "main"

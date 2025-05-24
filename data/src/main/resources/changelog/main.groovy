@@ -1,3 +1,5 @@
+package changelog
+
 databaseChangeLog = {
     changeSet(id: '1', author: 'liquibase') {
         createTable(tableName: 'test_table') {

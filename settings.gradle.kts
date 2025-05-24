@@ -11,7 +11,7 @@ dependencyResolutionManagement {
             version("springframework-boot", "3.4.2")
             version("openapi-generator", "7.11.0")
             version("docker-run", "0.36.0")
-            version("liquibase-gradle", "3.0.2")
+            version("liquibase-gradle", "2.2.2")
 
             plugin("kotlin-plugin-spring", "org.jetbrains.kotlin.plugin.spring").versionRef("kotlin-plugin-spring")
             plugin("springframework-boot", "org.springframework.boot").versionRef("springframework-boot")
@@ -51,7 +51,7 @@ dependencyResolutionManagement {
             version("postgresql", "42.1.4")
 
             library("liquibase-core", "org.liquibase", "liquibase-core").versionRef("liquibase-core")
-            library("liquibase-groovy-dsl", "org.liquibase", "liquibase-groovy-ds").versionRef("liquibase-groovy-dsl")
+            library("liquibase-groovy-dsl", "org.liquibase", "liquibase-groovy-dsl").versionRef("liquibase-groovy-dsl")
             library("picocli", "info.picocli", "picocli").versionRef("picocli")
             library("postgresql", "org.postgresql", "postgresql").versionRef("postgresql")
 

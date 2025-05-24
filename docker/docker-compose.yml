@@ -1,6 +1,15 @@
 name: price-notifications
 
 services:
+  pn_adminer:
+    image: adminer:5.3.0
+    restart: unless-stopped
+    ports:
+      - 8090:8080
+    environment:
+      - ADMINER_DESIGN=nette
+    networks:
+      - pn-db-network
   pn_db:
     image: postgres:17.4-alpine3.21
     restart: on-failure
@@ -15,7 +24,12 @@ services:
       - ./init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
     ports:
       - '6543:5432'
+    networks:
+      - pn-db-network
 volumes:
   pn_db_data:
 
-
+networks:
+  pn-db-network:
+    name: pn-db-network
+    driver: bridge

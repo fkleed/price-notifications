@@ -12,18 +12,21 @@ dependencyResolutionManagement {
             version("openapi-generator", "7.11.0")
             version("docker-run", "0.36.0")
             version("liquibase-gradle", "2.2.2")
+            version("jooq", "10.1")
 
             plugin("kotlin-plugin-spring", "org.jetbrains.kotlin.plugin.spring").versionRef("kotlin-plugin-spring")
             plugin("springframework-boot", "org.springframework.boot").versionRef("springframework-boot")
             plugin("openapi-generator", "org.openapi.generator").versionRef("openapi-generator")
             plugin("docker-run", "com.palantir.docker-run").versionRef("docker-run")
             plugin("liquibase-gradle", "org.liquibase.gradle").versionRef("liquibase-gradle")
+            plugin("jooq", "nu.studer.jooq").versionRef("jooq")
 
             // dependencies
             version("spring-boot", "3.4.2")
             version("disruptor", "4.0.0")
             version("kotlin-jvm-gradle-plugin", "1.9.25")
             version("jackson-module-kotlin", "2.18.2")
+            version("postgresql", "42.7.5")
 
             library(
                 "spring-boot-starter-webflux",
@@ -41,6 +44,7 @@ dependencyResolutionManagement {
                 "com.fasterxml.jackson.module",
                 "jackson-module-kotlin"
             ).versionRef("jackson-module-kotlin")
+            library("postgresql", "org.postgresql", "postgresql").versionRef("postgresql")
 
             bundle("spring-boot", listOf("spring-boot-starter-webflux", "spring-boot-starter-log4j2"))
 
@@ -48,12 +52,10 @@ dependencyResolutionManagement {
             version("liquibase-core", "4.32.0")
             version("liquibase-groovy-dsl", "4.0.1")
             version("picocli", "4.7.7")
-            version("postgresql", "42.7.5")
 
             library("liquibase-core", "org.liquibase", "liquibase-core").versionRef("liquibase-core")
             library("liquibase-groovy-dsl", "org.liquibase", "liquibase-groovy-dsl").versionRef("liquibase-groovy-dsl")
             library("picocli", "info.picocli", "picocli").versionRef("picocli")
-            library("postgresql", "org.postgresql", "postgresql").versionRef("postgresql")
 
             bundle(
                 "liquibase",

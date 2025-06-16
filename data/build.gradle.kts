@@ -24,7 +24,7 @@ dockerRun {
 
 liquibase {
     val dbUrl = "jdbc:postgresql://localhost:$pgPort/$pgDb?currentSchema=public&user=$pgUser&password=$pgPassword"
-    val mainChangelog = "src/main/resources/changelog/main.groovy"
+    val mainChangelog = "src/main/resources/changelog/main.yml"
     activities.register("main") {
         this.arguments = mapOf(
             "logLevel" to "info",
